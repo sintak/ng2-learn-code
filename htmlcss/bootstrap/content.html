@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>特殊形状</title>
+    <style>
+        .menu {
+            background-color: red;
+        }
+        
+        .menu.remove:before {
+            content: "\271a"
+        }
+        
+        .cross {
+            width: 20px;
+            height: 20px;
+            background-color: #F3F9FF;
+            border-radius: 10px;
+            border: 1px solid #DBE6EF;
+            display: inline-block;
+            position: relative;
+            bottom: 0px;
+            right: 0px;
+        }
+        
+        .cross:after {
+            content: "\2715";
+            color: #a2b6c5;
+            font-size: 12px;
+            position: relative;
+            left: 4px;
+            bottom: 3px;
+            cursor: pointer;
+        }
+        /* basic style */
+        
+        .close {
+            /* still bad on picking color */
+            background: orange;
+            color: red;
+            /* make a round button */
+            border-radius: 12px;
+            /* center text */
+            line-height: 20px;
+            text-align: center;
+            height: 20px;
+            width: 20px;
+            font-size: 18px;
+            padding: 1px;
+        }
+        /* use cross as close button */
+        
+        .close::before {
+            content: "\2716";
+        }
+        /* place the button on top-right */
+        
+        .close {
+            top: -10px;
+            right: -10px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cross"></div>
+    <div class="menu remove">删除</div>
+
+    <div style="height: 100px; width: 100px; border: 1px solid black; position: relative;">
+    <span class="close"></span>
+</div>
+</body>
+
+</html>

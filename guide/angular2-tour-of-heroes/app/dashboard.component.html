@@ -1,0 +1,9 @@
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let hero of wowHeroes" (click)="gotoDetail(hero)" class="col-1-4"> <!-- 每个div绑定一个hero、一个click事件处理函数 -->
+    <div class="module hero">
+      <h4>{{hero.name}}</h4>
+    </div>
+  </div>
+</div>
+<hero-search></hero-search>

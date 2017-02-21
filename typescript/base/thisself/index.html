@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<!--<body>
+  <script src="decorator1.js"></script>
+</body>-->
+
+<body>
+	<script type="text/javascript">
+        
+        // ------------------- 总结：var self=this;是为了在内部函数调用对象的非局部函数/变量
+      function BaseType(name,age){
+          //用一个变量保存当前函数执行环境中的this对象
+          //这里可能会有疑问：为什么非得把this保存起来呢？这是因为，内部函数（比如本函数里面包含的两个匿名函数）
+          //在搜索this变量时，只会搜索到属于它自己的this，而不会搜索到包含它的那个函数的this。
+          //所以，为了在内部函数能使用外部函数的this对象，要给它赋值了一个名叫self的变量。
+          var self=this; 
+          this.name=name;
+          this.age=age;
+          this.sayHello=function(){
+              console.log("My name is "+this.name+", and i'm "+this.age+"years old.");
+          }
+          this.saySomething=function(){
+                 //此处用法有点欠妥，完全可以不用self，而用this
+                 //self.sayHello();
+                 //正确的做法是：
+                 return function () { self.sayHello(); }
+                 //通常用法：将上下文this缓存到一个变量中
+                 //以便在本函数作用域内包含另一个函数作用域的情况下可以继续使用此上下文对象this
+                 //如果省略var self=this; 这行，那么在嵌套函数作用域内就无法访问到本函数作用域的成员了。
+          }
+      }
+      var b1=new BaseType("wede",30);
+      b1.saySomething()(); //My name is wede, and i'm 30years old. 
+
+ //     function BaseType(name,age){
+ //         var self=this;
+ //         this.name=name;
+ //         this.age=age;
+ //         this.sayHello=function (){  // <- 区别 this.sayHello =
+ //             console.log("My name is "+this.name+", and i'm "+this.age+"years old.");
+ //         }
+ //         this.saySomething=function(){
+ //             sayHello();
+ //         }
+ //     }
+ //     
+ //     var b1=new BaseType("wede",30);
+ //     b1.saySomething(); //ReferenceError: sayHello is not defined
+
+//function BaseType(name,age){
+//    var self=this;
+//    this.name=name;
+//    this.age=age;
+//    var sayHello=function (){  // <- 区别 var sayHello =
+//        console.log("My name is "+name+", and i'm "+age+"years old.");
+//    }
+//    this.saySomething=function(){
+//        sayHello();
+//    }
+//}
+//var b1=new BaseType("wede",30);
+//b1.saySomething();//My name is wede, and i'm 30years old.
+
+// -------------------
+
+        function fa(oid) {
+            this.id = oid;
+
+            this.PRINT = function() {
+
+                console.log(this);
+                console.log(self);
+                var self = this;
+                console.log(self);
+            }
+        }
+
+        function fb(oid) {
+            this.id = oid;
+            
+            //console.log(this);
+            //console.log(self);
+
+            this.P = function() {
+                var func1 = new fa();
+                func1.PRINT.call(this);
+            }
+
+        }
+
+        var funcb = new fb(456);
+        funcb.P();  // 
+
+        var funca = new fa(123);
+        funca.PRINT.call(funcb);
+
+    </script>
+</body>
+
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>-->

@@ -1,0 +1,45 @@
+/*登录样式*/
+.loginbg{ width:100%; height:auto; background:url(../img/login_bg.jpg) repeat-x top left; padding:100px 0 120px 0;}
+.loginwrap{ width:595px; margin:0 auto; height:auto; background:#fff; border-radius:8px; padding-bottom:90px; }
+	.loginwrap .tt{ width:340px; margin:0 auto; padding:75px 0 10px 0; font:18px/20px "微软雅黑"; display:block; text-align:center; color:#009beb; position:relative;}
+	.loginwrap .tt .helpw{ position:absolute; top:84px; right:-20px;}
+	.loginwrap .tt .helpw .list{ margin-right:-530px;}
+	.loginwrap .tt .helpw .list li{ text-align:left;}
+	.loginwrap .tt li .but{ width:99px; float:left; border:2px solid #40b4f0; border-radius:5px; display:block; padding:10px 15px; color:#40b4f0;}
+	.loginwrap .tt li .but:hover,.loginwrap .hover{  color:#fff; background:#40b4f0;}	
+	.loginwrap .tt .hover .but{color:#fff; background:#40b4f0;}	
+	.loginwrap .lst{ width:100%; padding-top:40px;}
+		.loginwrap .lst li{ width:100%; float:left; padding:16px 0; line-height:40px;}
+		.loginwrap .lst li .hint a{ font:14px; line-height:40px; margin-left:20px; color:#40b4f0; }
+		.loginwrap .lst li label{ width:197px; margin-right:20px; float:left; font:14px/40px "微软雅黑"; color:#666; text-align:right; }
+		.loginwrap .lst li label,.loginwrap .lst li input{ vertical-align:middle; font-family: "微软雅黑";}
+	.loginwrap .ipt{ width:213px;}
+	.loginwrap .ipt2{ width:120px; }
+	.loginwrap .ipt,.loginwrap .ipt2{ border: 1px solid #eaeaea; border-radius: 5px; height: 40px; line-height: 40px; padding: 0 5px; color:#666;}
+	.verify{  width: 87px; height: 40px;  border: 1px solid #eaeaea; border-radius: 5px; background: none repeat scroll 0 0 #f2f2f2;   margin-left: 12px; color: #666; cursor: pointer; font: 12px/40px "微软雅黑";}  
+.loginwrap .pt0{ padding-top:2px;}	
+.loginwrap .pt0 li{ padding:8px 0;}
+.loginbut{ padding:21px 0 0 128px;}
+	.loginbut .but1{ width:213px; height:43px; background:#009fec; color:#fff; font:14px/43px "微软雅黑"; border:none; border-radius:3px; text-align:center; cursor:pointer;margin-left: 20px;}
+	.loginwrap .pw{ padding:74px 53px 69px 0; color:#666; line-height:24px; font-size:14px; text-align:right;}
+	.loginwrap .pw a{ color:#009fec;}
+.loginwrap .pt1{ width:136px; height:40px; line-height:40px; padding:0 5px; border:solid 1px #eaeaea; border-radius:5px;}
+.find .but1,.find .but2{ width:107px; height:43px; text-align:center; line-height:43px; float:left; cursor:pointer}
+	.find .but1{ background:#009fec; border:solid 1px #009fec; color:#fff;}
+	.find .but2{background:#f2f2f2; border:solid 1px #e5e5e5; color:#666; margin-left:12px;}
+	/* 新增 */
+	.loginwrap .tt li label{ font-size: 36px;}
+	.downline{
+	text-decoration: underline;
+	font-size: 12px;
+}
+.lst11{ width:100%; padding-top:40px;}
+.lst11 li{ width:100%; float:left; padding:16px 0; line-height:40px;}
+.lst11 li .hint a{ font:14px; line-height:40px; margin-left:20px; color:#40b4f0; }
+.lst11 li label{ width:60px; margin-right:20px; float:left; font:14px/40px "微软雅黑"; color:#666; text-align:right; }
+.lst11 li label,.lst11 .lst li input{ vertical-align:middle; font-family: "微软雅黑";}
+
+.lst11 .ipt{ width:233px;}
+.lst11 .ipt2{ width:136px; }
+.lst11 .ipt,.lst11 .ipt2{ border: 1px solid #eaeaea; border-radius: 5px; height: 40px; line-height: 40px; padding: 0 5px; color:#666;}
+

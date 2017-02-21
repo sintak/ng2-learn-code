@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>width获取</title>
+</head>
+<body>
+    <div id="div1" style="width: 58px;"></div>
+    <script type="text/javascript">
+        getDivWidth = function() {
+            console.log(document.getElementById('div1').style.width);
+            console.log(document.getElementById('div1').clientWidth);
+            console.log(document.getElementById('div1'));
+        }
+
+        getDivWidth();
+    </script>
+</body>
+</html>

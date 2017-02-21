@@ -1,0 +1,50 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "noImplicitAny": false,
+        "strictNullChecks": false,  // 在严格的null检查模式下，null和undefined值不包含在任何类型里，只允许用它们自己和any来赋值（有个例外，undefined可以赋值到void）
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noEmitOnError": true,  // 编译错误时停止，不再生成js文件
+        "module": "commonjs",
+        "removeComments": true,
+        "sourceMap": true,
+        "outDir": "js",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./node_modules"
+        ],
+        "types": [
+            "core-js",
+            "node"
+        ]
+    },
+    // "files": [  // 直接指定文件
+    //     "ts/app.ts"
+    // ],
+    "include": [  // 如果不写include目录，则默认使用exclude以外的目录作为需要编译的目录。如果指定了include，则作用目录变为include包含的目录
+        "ts/**/*"  // **/ 递归匹配任意子目录
+    ],
+    "exclude": [
+        "node_modules",  // 其实默认已排除
+        "js",
+        "ts/tree-test.ts"
+    ],
+    "compileOnSave": true  // 要想支持这个特性需要Visual Studio 2015， TypeScript1.8.4以上并且安装atom-typescript插件。
+}
+// {
+//     "compilerOptions": {
+//         "module": "commonjs",<(￣︶￣)>
+//         "target": "es5",
+//         "noImplicitAny": false,
+//         "sourceMap": true,
+//         "outDir": "js",
+//         "removeComments": true
+//     },
+//     "include": [
+//         "ts"
+//     ],
+//     "exclude": [
+//         "node_modules"
+//     ]
+// }

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>hover失效问题</title>
+    <!--<script src="https://code.jquery.com/jquery.min.js"></script>-->
+    <script src="C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\WebTemplates\NetCore\CSharp\1033\StarterWeb\wwwroot\lib\jquery\dist/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+        .menu {
+            position: relative;
+            width: 150px;
+            float: left;
+        }
+        
+        .menu .content {
+            width: 100%;
+            padding: 5px;
+            position: absolute;
+            border: 1px solid #bdbdbd;
+            border-radius: 5%;
+            box-shadow: 0 0 5px #bdbdbd;
+        }
+        
+        .menu-item {}
+        
+        ul {
+            list-style: none;
+        }
+        
+        .menu .content .menu-item {
+            list-style: none;
+            padding: 3px;
+        }
+        
+        .menu .content .menu-item:hover {
+            border-radius: 5%;
+            opacity: unset;
+            cursor: pointer;
+            background-color: #bdbdbd;
+            transition: background-color 0.2s ease-out;
+        }
+        
+        .menu .content li {
+            float: left;
+            margin-left: 5px;
+        }
+        
+        .menu .content li:hover {
+            color: red;
+        }
+        
+        .tree {
+            box-sizing: border-box;
+            /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+            width: 88px;
+        }
+        
+        .tree li {
+            list-style: none;
+            cursor: default;
+        }
+        
+        .chart {
+            width: auto;
+            /* width: 230px; */
+            border: 1px solid #e8e8e8;
+            border-radius: 5px;
+            padding-bottom: 20px;
+            float: left;
+            margin-bottom: 20px;
+            min-width: 130px;
+        }
+        /*.chart {
+            width: auto;
+            border: 1px solid #e8e8e8;
+            border-radius: 5px;
+            padding-bottom: 20px;
+            float: left;
+            margin-bottom: 20px;
+            min-width: 230px;
+        }*/
+    </style>
+
+    <script>
+        $(function () {
+            $('#content').append('<li class="menu-item">eee</li>')
+            $('#content').append('<li class="menu-item">fff</li>')
+            $('#content').append('<li class="menu-item">ggg</li>')
+            $('#content').append('<li class="menu-item">hhh</li>')
+            $('#content').append('<li class="menu-item">iii</li>')
+                .click(function () {
+                    alert(this)
+                    console.log(this)
+                })
+            // $("#menu").remove();
+            // $(".tree li").append('<div id="menu" class="menu"><ul id="content" class="content"><li class="menu-item">aaa</li><li class="menu-item">bbb</li><li class="menu-item">ccc</li><li class="menu-item">ddd</li></ul></div>');
+        });
+    </script>
+</head>
+
+<body>
+    <div class="chart">
+        <ul class="tree">
+            <li>
+                <div id="menu" class="menu">
+                    <ul id="content" class="content" style="z-index: 999;">
+                        <li class="menu-item">aaa</li>
+                        <li class="menu-item">bbb</li>
+                        <li class="menu-item">ccc</li>
+                        <li class="menu-item">ddd</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+    <!--hover失效的原因是，被其它元素(可能是透明的)覆盖了，不在顶层。置于顶层即可解决-->
+    <div style="float: left;margin-left: 35px; width: 300px;height: 300px;background-color: blue; opacity: 0.5;"></div>
+
+</body>
+
+</html>

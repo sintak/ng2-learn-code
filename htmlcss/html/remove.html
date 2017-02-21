@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function() {
+            setTimeout(function() {
+                $("li[id=\"conflictItem\"]").remove()
+            }, 12000)
+            
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="conflictItem">fdsf</li>
+        <li id="conflictItem">hgfhd</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<h1>My First Attribute Directive</h1>
+<h4>Pick a highlight color</h4>
+<div>
+  <label><input type="radio" name="colors" (click)="color='lightgreen'">Green</label>
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p [myHighlight]="color">Highlight me!</p>
+<p [myHighlight]="color" [defaultColor]="'violet'">Highlight me too!</p>
+
+<!--
+    AppComponent中没有color属性，但angular在AppComponent的运行期实例上添加了一个 color 属性.
+    这是一个 很便利的 行为，但它也是 隐式的 行为，这容易让人困惑。 
+    虽然这样也可行，但我们建议你还是要把 color 属性加到 AppComponent 中。
+-->

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--添加一个 <base> 元素，来告诉路由器该如何合成导航用的 URL 。-->
+  <!--<base href="/">  -->
+  <script>document.write('<base href="' + document.location + '" />');</script>
+
+  <title>Angular 2 Tour of WOWHeroes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <!-- 1. Load libraries -->
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <!-- 2. Configure SystemJS -->
+  <script src="systemjs.config.js"></script>
+  <script>
+        // 告诉 SystemJS 引入 main 文件。 (main.js ，从 main.ts 转译而来的，还记得吧？ ) main 是让 Angular 启动应用的地方。 还会把启动过程中的错误捕获并记录到控制台中。
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+</head>
+<!-- 3. Display the application -->
+
+<body>
+  <!--当 Angular 在 main.ts 中调用 bootstrap 函数时，它读取 AppComponent 的元数据， 
+      发现选择器是 my-app ，于是它定位到一个元素名为 my-app 的 DOM 元素，
+      并且把应用加载到这个标签中↓。-->
+  <my-app>Loading...</my-app>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "ts-test",
+  "version": "0.0.0",
+  "license": "MIT",
+  "angular-cli": {},
+  "private": true,
+  "description": "my ts test",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./js/ts/linqts-test.js",
+    "start1": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peak",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "linqts": "^1.6.1",
+    "lodash": "^4.17.2",
+    "md5": "^2.2.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^5.0.2",
+    "sb-js": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "@types/lodash": "^4.14.41",
+    "@types/node": "^6.0.51"
+  }
+}

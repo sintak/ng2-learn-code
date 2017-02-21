@@ -1,0 +1,8 @@
+<h2>LOGIN</h2>
+<label for="">用户名：<input type="text"></label>
+<label for="">密码：<input type="text"></label>
+<p>
+    <button (click)="login()" *ngIf="!auth1Service.isLoggedIn">Login</button>
+    <button (click)="logout()" *ngIf="auth1Service.isLoggedIn">Logout</button>
+</p>
+<p>{{message}}</p>

@@ -1,0 +1,30 @@
+#################
+## 
+#################
+
+# Users Environment Variables
+.lock-wscript
+.tsdrc
+.typingsrc
+
+#IDE configuration files
+.idea
+.vscode
+*.iml
+
+# Dependency directory
+# Commenting this out is preferred by some people, see
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
+node_modules/
+typings/
+
+# file
+*.js
+*.map
+*.log
+*.log.*
+
+#
+!systemjs.config.js
+!karma.conf.js
+!protractor.conf.js

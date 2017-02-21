@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="css/login.css" rel="stylesheet" type="text/css" />
+    <link href="css/page.css" rel="stylesheet" type="text/css" />
+    <link href="css/popup.css" rel="stylesheet" type="text/css" />
+    <link href="css/public.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="midwrap">
+                <div class="midr">
+                    <!--<div class="row">-->
+                    <h2>考勤报表</h2>
+                    <!--</div>-->
+                    <div class="">
+                        <!--<div class="row">-->
+                        <div class="mwrap">
+                            <div class="row">
+                                <div class="mw_tab">
+
+                                </div>
+                            </div>
+                            <!--tab end-->
+                            <div class="">
+                                <div class="midrw">
+                                    <div class="clsmag mt20 pos_re" id="deptAndList">
+                                        <div class="col-sm-3">
+                                            <div class="chart">
+                                                <div class="title deptTitle" id="deptTitle">
+                                                    {{deptCmpOptions.title}} <span *ngIf="deptCmpOptions.helpUrl" id="deptHelp"
+                                                        class="helpTips2">帮助?</span>
+                                                </div>
+                                                <div class="frame frame_hight">
+                                                    <div class="input-group" *ngIf="deptCmpOptions.searchEnable">
+                                                        <input #keyword type="text" value="" (keyup)="search(keyword.value)" class="form-control" id="keyWord" placeholder="搜索员工姓名"
+                                                        />
+                                                        <span class="input-group-addon">
+                                                            <span (click)="search(keyword.value)" class="glyphicon glyphicon-search"></span>
+                                                        </span>
+                                                    </div>
+                                                    <tree [tree]="deptUserList" [dragdropEnable]="deptCmpOptions.dragdropEnable" [menuVisibleEnable]="deptCmpOptions.menuVisibleEnable"
+                                                        (nodeRemoved)="onNodeRemoved($event)" (nodeRenamed)="onNodeRenamed($event)"
+                                                        (nodeSelected)="onNodeSelected($event)" (nodeMoved)="onNodeMoved($event)"
+                                                        (nodeCreated)="onNodeCreated($event)">
+                                                    </tree>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <!--<div class="tabwrap">-->
+                                            <div class="row">
+                                                <div class="wrap mt10">
+                                                    <div class='col-sm-3'>
+                                                        <div class="form-group">
+                                                            <div class='input-group date' id='datetimepicker1'>
+                                                                <input type='text' class="form-control" />
+                                                                <span class="input-group-addon">
+                                                                                <span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span class="left">至</span>
+                                                    <div class='col-sm-3'>
+                                                        <div class="form-group">
+                                                            <div class='input-group date' id='datetimepicker2'>
+                                                                <input type='text' class="form-control" />
+                                                                <span class="input-group-addon">
+                                                                                <span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input name="input" type="button" class="btn btn-default" value="按日期统计" id="btnFind" />
+                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                    <input name="input" type="button" class="btn btn-default ml10" value="统计本月" id="btnThiz" />
+                                                    <input name="input" type="button" class="btn btn-default ml10" value="统计上月" id="btnPrev" />
+                                                    <div class="schmid right">
+                                                        <span class="ft12">筛选：</span>
+                                                        <select name="select" id="typeSelect">
+                                                                <option value="0" selected="true">所有考勤&nbsp;</option>
+                                                                <option value="1">正常考勤&nbsp;</option>
+                                                                <option value="2">异常考勤&nbsp;</option>
+                                                            </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- test -->
+                                            <div class="row">
+                                                <div class="wrap">
+                                                    <span class="ft16 fnt">当前员工：</span>
+                                                    <span class="ft16 ft1 mr40"><strong id="userName">未选择</strong></span>
+                                                    <app-datetime-picker (datetimeChangedEvent)="datetimeChangedEventHandler($event)" [option]="dtpOption"></app-datetime-picker>
+                                                    <input name="input" type="button" class="but3" value="按日期查看" id="btnFind">
+                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                    <input name="input" type="button" class="but2 ml10" value="查看本月" id="btnThiz">
+                                                    <input name="input" type="button" class="but2 ml10" value="查看上月" id="btnPrev">
+                                                </div>
+                                            </div>
+                                            <!-- test -->
+                                            <div class="row">
+                                                <div class="statw">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="sta_tab2 mt20" id="list">
+                                                        <tr>
+                                                            <th width="67" rowspan="2" align="center">姓名</th>
+                                                            <th width="84" rowspan="2">工号</th>
+                                                            <th rowspan="2">部门</th>
+                                                            <th>未签</th>
+                                                            <th>迟到</th>
+                                                            <th>早退</th>
+                                                            <th>旷工</th>
+                                                            <th>补签</th>
+                                                            <th>请假</th>
+                                                            <th>加班</th>
+                                                            <th>调休</th>
+                                                            <th>出差</th>
+                                                            <th>额外工时</th>
+                                                            <th>应出勤</th>
+                                                            <th>实出勤</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th><span class="ft12">次</span></th>
+                                                            <th>
+                                                                <select name="select2" id="sLate">
+                                            <option>小时</option>
+                                            <option>分钟</option>
+                                            <option>次数</option>
+                                        </select>
+                                                            </th>
+                                                            <th>
+                                                                <select name="select3" id="sLeave">
+                                            <option>小时</option>
+                                            <option>分钟</option>
+                                            <option>次数</option>
+                                        </select>
+                                                            </th>
+                                                            <th>
+                                                                <select name="select4" id="sAbsenteeism">
+                                            <option>小时</option>
+                                            <option>分钟</option>
+                                            <option>次数</option>
+                                            <option>天</option>
+                                        </select>
+                                                            </th>
+                                                            <th><span class="ft12">次</span></th>
+                                                            <th>
+                                                                <select name="select6" id="sVacation">
+                                            <option>天</option>
+                                            <option>小时</option>
+                                            <option>分钟</option>
+                                        </select>
+                                                            </th>
+                                                            <th>
+                                                                <select name="select7" id="sOvertime">
+                                            <option>天</option>
+                                            <option>小时</option>
+                                            <option>分钟</option>
+                                        </select>
+                                                            </th>
+                                                            <th>
+                                                                <select name="select7" id="sRest">
+                                            <option>天</option>
+                                            <option>小时</option>
+                                            <option>分钟</option>
+                                        </select>
+                                                            </th>
+                                                            <th>
+                                                                <select name="select7" id="sTravel">
+                                            <option>天</option>
+                                            <option>小时</option>
+                                            <option>分钟</option>
+                                        </select>
+                                                            </th>
+                                                            <th>
+                                                                <select name="select7" id="sExtra">
+                                            <option>天</option>
+                                            <option>小时</option>
+                                            <option>分钟</option>
+                                        </select>
+                                                            </th>
+                                                            <th>
+                                                                <select name="select7" id="sTotal">
+                                            <option>天</option>
+                                            <option>小时</option>
+                                            <option>分钟</option>
+                                        </select>
+                                                            </th>
+                                                            <th>
+                                                                <select name="select7" id="sReal">
+                                            <option>天</option>
+                                            <option>小时</option>
+                                            <option>分钟</option>
+                                        </select>
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="wait" colspan="15"></td>
+                                                        </tr>
+                                                        <tr id="listItem" class="poines">
+                                                            <td align="center">三藏</td>
+                                                            <td align="center">100001<br /></td>
+                                                            <td align="center">策划部<br /></td>
+                                                            <td align="center"><span>8</span></td>
+                                                            <td align="center">
+                                                                <div class="detail">
+                                                                    <span class="poines">5</span>
+                                                                    <ul>
+                                                                        <li class="hint">春节临时班B</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                            <td align="center">
+                                                                <div class="detail">
+                                                                    <span class="poines">5</span>
+                                                                    <ul>
+                                                                        <li class="hint">春节临时班B</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                            <td align="center">
+                                                                <div class="detail">
+                                                                    <span class="poines">5</span>
+                                                                    <ul>
+                                                                        <li class="hint">春节临时班B</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                            <td align="center">8</td>
+                                                            <td align="center">
+                                                                <div class="detail">
+                                                                    <span class="poines">5</span>
+                                                                    <ul>
+                                                                        <li class="hint">春节临时班B</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                            <td align="center">
+                                                                <div class="detail">
+                                                                    <span class="poines">5</span>
+                                                                    <ul>
+                                                                        <li class="hint">春节临时班B</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                            <td align="center">
+                                                                <div class="detail">
+                                                                    <span class="poines">5</span>
+                                                                    <ul>
+                                                                        <li class="hint">春节临时班B</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                            <td align="center">
+                                                                <div class="detail">
+                                                                    <span class="poines">5</span>
+                                                                    <ul>
+                                                                        <li class="hint">春节临时班B</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                            <td align="center">
+                                                                <div class="detail">
+                                                                    <span class="poines">5</span>
+                                                                    <ul>
+                                                                        <li class="hint">春节临时班B</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                            <td align="center">
+                                                                <div class="detail">
+                                                                    <span class="poines">5</span>
+                                                                    <ul>
+                                                                        <li class="hint">春节临时班B</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                            <td align="center">
+                                                                <div class="detail">
+                                                                    <span class="poines">5</span>
+                                                                    <ul>
+                                                                        <li class="hint">春节临时班B</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <span class="addUser_tips">
+                            提示：1. 考勤报表可按部门或员工查看，请从左边组织架构中选择你要查看的员工或部门
+                            <br />　　　2. 点击报表每一行，可查看员工每天的详细考勤记录
+                        </span>
+                                            <div class="oper mt28">
+                                                <div class="pages right" id="page"></div>
+                                            </div>
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
