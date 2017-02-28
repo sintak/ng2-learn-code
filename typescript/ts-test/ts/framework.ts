@@ -184,13 +184,13 @@ model.vo.CompanyInfoVo.EVENT_UPDATE = "event_update";
 
 
 // Vo.js
-// 汇总repository 
+// 汇总repository （ng2：作为注入） (hub?)
 model.Vo = function () {
     this.companyInfo = new model.vo.CompanyInfoVo();
     // ...
 }
 
-// Facade.js
+// Facade.js  (hub?)
 var Model = function () {
     this.vo = new model.Vo()
     // ...

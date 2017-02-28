@@ -41,3 +41,20 @@ git push -u origin master
 git remote add origin https://github.com/sintak/jubilant-sniffle.git
 git push -u origin master
 ```
+
+## 修改Git remote add时使用的远程仓库
+```
+git remote rm origin
+```
+1. 修改命令 
+git remte origin set-url URL 
+2. 先删后加 
+git remote rm origin 
+git remote add origin git@github.com:Liutos/foobar.git 
+3. 直接修改config文件
+```
+npm install @types/reflect-metadata --save-dev
+npm install reflect-metadata --save
+
+import "reflect-metadata";
+```

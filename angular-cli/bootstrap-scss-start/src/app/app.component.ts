@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 let md5 = require('md5');
-declare var $: any;
-// import * as $ from 'jquery';
+// declare var $: any;
+// import * as $ from 'jquery';  // ok
+import 'jquery';
+
 // let moment = require('moment');
 import { Moment } from 'moment/moment';
 // declare var moment: any;  // at angular-cli.json

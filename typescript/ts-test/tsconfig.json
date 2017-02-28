@@ -6,6 +6,11 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "noEmitOnError": true,  // 编译错误时停止，不再生成js文件
+        "noImplicitReturns": false,  // 防止你忘记在函数末尾返回值
+        "noFallthroughCasesInSwitch": false,  // 防止在switch代码块里的两个case之间忘记添加break语句
+        "allowUnreachableCode": false,  // 发现那些执行不到的代码
+        "allowUnusedLabels": false,  // 发现那些执行不到的标签
+        "noImplicitThis": false,  // 当没有明确指定类型（或通过类型推断）的 this被使用时会产生一个错误。解决的方法是在接口或函数上使用指定了类型的 this参数
         "module": "commonjs",
         "removeComments": true,
         "sourceMap": true,
@@ -14,9 +19,10 @@
             "./node_modules/@types",
             "./node_modules"
         ],
-        "types": [
+        "types": [  // 这里声明的type全局可用?
             "core-js",
-            "node"
+            "node",
+            "jquery"
         ]
     },
     // "files": [  // 直接指定文件

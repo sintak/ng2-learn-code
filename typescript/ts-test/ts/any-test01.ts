@@ -222,9 +222,12 @@ class ABCABC {
     test(...args: any[]) {
         args.forEach(arg => console.log(arg));
     }
+
+    test1 = function() {}
 }
 
-new ABCABC().test(1, 2, 'hello', 3)
+new ABCABC().test(1, 2, 'hello', 3);
+new ABCABC().test1(); // ok.不过智能提示显示为属性图标
 // -------
 let abc = {a: 'sfd', b: 3};
 console.log(abc);
