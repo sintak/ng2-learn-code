@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./handlebars-v4.0.5.min.js"></script>
+</head>
+
+<body>
+    <script>     
+
+        var source = "<p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
+            "{{kids.length}} kids:</p>" +
+            "<ul>{{#kids}}<li>{{name}} is {{age}}</li>{{/kids}}</ul>";
+        var template = Handlebars.compile(source);
+
+        var data = {
+            "name": "Alan", "hometown": "Somewhere, TX",
+            "kids": [{ "name": "Jimmy", "age": "12" }, { "name": "Sally", "age": "4" }]
+        };
+        var result = template(data);
+        console.log(result);
+
+        data = {
+            title: "Joe",
+            calc: function () {
+                return 2 + 4;
+            }
+        };
+
+        source = "{{title}} spends {{calc}}";
+        template = Handlebars.compile(source);
+        result = template(data);
+        console.log(result);
+
+        source = "{{#comboDetail}}{{commodityName}}/{{commodityNum}}\\n=====\n{{/comboDetail}}"
+        template = Handlebars.compile(source);
+        data = {
+            comboDetail: [
+                {
+                    commodityName: "功夫大師",
+                    commodityNum: 3
+                },
+                {
+                    commodityName: "高浮雕",
+                    commodityNum: 4
+                }]
+        }
+        result = template(data);
+        console.log(result);
+    </script>
+</body>
+
+</html>
