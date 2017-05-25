@@ -1,0 +1,2 @@
+## node-pre-gyp ERR! Tried to download(undefined): https://mapbox-node-binary.s3.amazonaws.com/sqlite3/v3.1.8/node-v48-win32-x64.tar.gz情况，换源
+npm install sqlite3 --sqlite3_binary_host_mirror=https://foxgis.oss-cn-shanghai.aliyuncs.com --save
