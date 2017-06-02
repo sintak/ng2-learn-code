@@ -7,6 +7,11 @@ $ ionic start cutePuppyPics --v2
 $ cd cutePuppyPics
 $ ionic serve
 
+$ npm install --proxy http://127.0.0.1:8087
+
+## .npmrc file content
+sass_binary_path=C:\Users\lf\Downloads\win32-x64-48_binding.node
+
 https://github.com/driftyco/ionic-cli/wiki/Migrating-to-NPM-from-bower
 
 
