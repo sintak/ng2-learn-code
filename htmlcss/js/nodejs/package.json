@@ -1,0 +1,16 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "时间 2016-12-24 07:24:57  Linux mobile development 相似文章 (1)\r 原文  http://blog.csdn.net/absurd/article/details/53856186\r 主题 C++ Node.js\r 0.先安装node.js和python(2.7)。请参考：",
+  "main": "index.js",
+  "dependencies": {
+    "gifencoder": "^1.0.6",
+    "png-file-stream": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
