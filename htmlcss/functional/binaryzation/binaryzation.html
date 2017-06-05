@@ -38,12 +38,15 @@
 				console.log(threshold);
 				var c=document.getElementById("canvas");
 			    var ctx=c.getContext("2d");
-			    
+			    Uint8ClampedArray
 			    var img = document.getElementById("scream");
 				ctx.drawImage(img,0,0,c_w,c_h);
                 console.log(c_w, c_h);
 				
 			    var imgData=ctx.getImageData(0,0,c_w,c_h);
+                console.log(imgData);  // =400 * 300 * 4
+                console.log(imgData.data.length);
+
 			    for (var i=0;i<imgData.data.length;i+=4)
 			    {
 			    	var R = imgData.data[i];	//R(0-255)
