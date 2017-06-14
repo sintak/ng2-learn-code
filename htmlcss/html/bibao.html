@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./a.js"></script>
+    <script src="./class.js"></script>
+</head>
+<body>
+    <script>
+        var buf = [];
+        var hal = {
+            
+            update: function(callback) {
+                callback(1);
+            },
+            
+            test: function()
+            {
+                var i = 0;
+                hal.update(function(data) {
+                    i+= data;
+                    console.log(i);
+                })
+            }
+        };
+
+        hal.test();
+        hal.test();
+        hal.test();
+        hal.test();
+
+        // var i = 0;
+        // function test(callback)
+        // {
+        //     callback(1);
+        //     callback(2);
+        //     callback(3);
+        // }
+        // test(function(data) {
+        //     i += data;
+        //     console.log(i);
+        // });
+        var i = 11;
+        let j = 3;
+        
+        var testcallback = function(callback) {
+            // setTimeout(function() {
+                // for (var index = 0; index < 100000000000; index++) {
+                //     var element = 100000000000;
+                //     callback(i);
+                    
+                // }
+                //setInterval(function() {callback(j);}, 100)
+                
+            // }, 1000);
+        }
+
+        setInterval(function() {i++; j = i;}, 100)
+
+        // setTimeout(function() {
+        //     for (var index = 0; index < 10000000000; index++) {
+        //         i++;                
+        //     }
+        // }, 200);
+
+        testcallback(function(data) { 
+                console.log(j);
+                console.log(data); 
+            }
+        );
+
+
+
+        // --------------
+        var h = {};
+        h.f = function() { console.log("f");}
+        // h = { a:1};
+        h.f();
+
+
+        // ---------------------
+        hal.SPManager = function(COMName) {
+            // var COMName = this.COMName; not ok
+
+            // this.COMName = COMName;  // ok
+            this.COMName =function() {return COMName;}
+
+            this.startServe = function(callback) {
+                console.log("console.log(COMName)", COMName);
+                console.log("this.COMName", this.COMName());
+            }
+        }
+
+        var spm = new hal.SPManager("COM2");
+        spm.startServe(function() {});
+        console.log(spm.COMName);
+
+        // -------
+        try {
+            
+        } catch (error) {
+            
+        }
+
+
+        // ----------
+        var map = new Map();
+        
+        var arr1 = [];
+        var arr = ["COM1", "COM2"];
+        arr.map(com => arr1.push(com));
+        console.log(arr1);
+
+        function throwExp() {
+            throw "error1111111"
+        }
+
+        try {
+            throwExp();
+        } catch (error) {
+            console.log(error);
+            console.error(error);
+        }
+
+    </script>
+    <script>
+        setTimeout(function() {
+            test();
+            
+        }, 1500);
+    </script>
+    
+</body>
+<!--<script src="./a.js"></script>--> <!-- ? -->
+</html>

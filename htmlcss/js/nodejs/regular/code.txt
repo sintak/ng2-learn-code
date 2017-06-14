@@ -1,0 +1,73 @@
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\customer\Query.js(880): 			PrintDao.printRechargeLogic('3', {
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\handover\Main.js(643): 				PrintDao.printHandover(handoverId);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\order\Main.js(469): 																			//PrintDao.printOrderById(data.id);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\order\Main.js(470): 																			//PrintDao.printReverseLogic(data.id);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\order\Main.js(471): 																			PrintDao.printSellTicketLogic(data.id, 2);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\place\SelectPlaceView.js(69): 												//PrintDao.printChangePlaceInfo(sellInfo.placeName, place.placeName, setting.settingPrintJson);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\place\SelectPlaceView.js(70):                                                 PrintDao.printChangeTableLogic(sellInfo.placeName, place.placeName);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\Edit.js(1333): 							//PrintDao.printChangePlaceInfo(Ext.getCmp('shouyinMainView').sellInfo.placeName, placeName, setting.settingPrintJson);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\Edit.js(1334): 	                        PrintDao.printChangeTableLogic(Ext.getCmp('shouyinMainView').sellInfo.placeName, placeName);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\Edit.js(1353): 												PrintDao.printOrderById(sellId, '',function (message) {
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\Edit.js(1359): 												PrintDao.printOrderInfoDetail(sellInfo, details, function (message) {
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\Edit.js(1367): 	                                    	PrintDao.printOrderById(sellId, '', function (message) {
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\Edit.js(1399): 					PrintDao.printOrderById(sellId, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\EditTake.js(75): 							PrintDao.printOrderById(Ext.getCmp('shouyinMainView').sellInfo.id, '', function (message) {
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\EditTake.js(92): 		 PrintDao.printOrderById(Ext.getCmp('shouyinMainView').sellInfo.id, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\EditTake.js(109): 						PrintDao.printOrderById(sellId, '', function (message) {
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\PutupQueryAfter.js(305): 											//PrintDao.printOrderById(sellId);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\PutupQueryAfter.js(306): 											PrintDao.printCancelLogic(sellId);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\PutupQueryTake.js(711): 														PrintDao.printOrderTakePrivateById(record.get('id'), '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\PutupQueryTake.js(761): 															PrintDao.printOrderById(record.get('id'), '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\PutupQueryTake.js(785): 															PrintDao.printOrderById(record.get('id'), '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\PutupQueryTake.js(806): 													PrintDao.printOrderById(record.get('id'), '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\PutupQueryTake.js(915):                     PrintDao.printCancelLogic(sellId);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\PutupQueryTake.js(1429): 								//PrintDao.printOrderTakePrivateById(record.get('id'), '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\putup\PutupQueryTake.js(1430): 								PrintDao.printOrderTakePrivateById(record.id, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\sell\Main.js(516):                                 PrintDao.printSellTicketLogic(sellId, status, sellType);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\sell\Main.js(556): 										PrintDao.printSellTicketLogic(sellId, 2, sellType);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\sell\Main.js(557): 										//PrintDao.printReverseLogic(sellId);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\sell\Main.js(573): 												//PrintDao.printById(2, record.get('id'), '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\sell\Main.js(574): 												PrintDao.printReverseLogic(record.get('id'));
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\shoukuan\ShouKuan.js(2433): 		PrintDao.printShouyinById(sellId, this.selectCustomerInfo, function(message){
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\shouyin\Main.js(5368):         PrintDao.printPreShouyin(sellInfo, sellDetails, selectCustomerInfo, sellerInfo, callback);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\takeout\meituanMain.js(1146):                 PrintDao.printMtOrdersLogic(12, cancelOrderIds);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\takeout\meituanMain.js(1187):                 PrintDao.printMtOrdersLogic(12, [cancelSelectedData.orderId]);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\takeout\meituanMain.js(1207):                     PrintDao.printMtOrdersLogic(1, orderIds);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\takeout\meituanMain.js(1270):                             PrintDao.printMtOrdersLogic(1, orderIds);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\takeout\meituanMain.js(1578):                                 PrintDao.printMtOrdersLogic(2, orderIds);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\takeout\meituanMain.js(1733):                                 //PrintDao.printMtOrdersLogic(3, payOffData.orderIds);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\takeout\meituanMain.js(2753):                         		PrintDao.printMtOrdersLogic(3, [mtOrder.orderId], sellInfo);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\app\view\takeout\meituanMain.js(2975):             		PrintDao.printMtOrdersLogic(3, [mtOrder.orderId], sellInfo);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(579): 											//PrintDao.printOrderInfoDetail(sellInfo, sellDetails, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(593): 													PrintDao.printWXPayOffLogic(6, sellInfo, sellDetails, null, sellerInfo, function (message) {
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(603): 											//PrintDao.printOrderInfoDetail(sellInfo, sellDetails, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(604): 											//PrintDao.printDifferentTeaPrice(sellInfo, order);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(608): 											//PrintDao.printDifferentTeaPrice(sellInfo, order, orderDetail);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(609): 											//PrintDao.printDifferentTeaPrice(tmpSellInfo, order, orderDetail);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(660): 							PrintDao.printOrderInfoDetail(sellInfo, sellDetails, '', function (message) {
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(689): 												PrintDao.printOrderInfoDetail(sellInfo, sellDetails, '', function (message) {
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(697): 												//PrintDao.printOrderInfoDetail(sellInfo, sellDetails, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(698): 												//PrintDao.printDifferentTeaPrice(sellInfo, order, orderDetail);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(812): 						 PrintDao.printOrderInfoDetail(sellInfo, sellDetails, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(826): 						 PrintDao.printOrderInfoDetail(sellInfo, sellDetails, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(957): 										//PrintDao.printOrderInfoDetail(sellInfo, sellDetails, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(971):                                                 PrintDao.printWXPayOffLogic(6, sellInfo, sellDetails, null, sellerInfo,function (message) {
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(980): 										//PrintDao.printOrderInfoDetail(sellInfo, sellDetails, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(981): 										//PrintDao.printDifferentTeaPrice(sellInfo, order);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(1030): 							PrintDao.printOrderInfoDetail(sellInfo, sellDetails, null);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\OrderDao.js(1055): 										    PrintDao.printOrderInfoDetail(sellInfo, sellDetails, null, function (message) {
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\SellDao.js(2094): 						//PrintDao.printOrderById(sellId, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\dao\SellDao.js(2097): 								PrintDao.printPayOffLogic(6, sellInfo, sellDetails);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\plugin\PrintPlugin.js(32): 			var printSetting = PrintDao.getPrinterDefData();
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(961): 							PrintDao.printMtOrdersLogic(1, [batchOrders[0].orderId]);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(976): 							PrintDao.printMtOrdersLogic(1, mtOrderIds);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(1026): 							PrintDao.printMtOrdersLogic(12, [batchOrders[0].orderId]);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(1038): 							PrintDao.printMtOrdersLogic(12, mtOrderIds);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(1364): 												PrintDao.printDCBById(extra, sellId, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(1454): 									//PrintDao.printChangePlaceInfo(placeOrg.placeName, place.placeName, setting.settingPrintJson);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(1455): 	                                PrintDao.printChangeTableLogic(placeOrg.placeName, place.placeName);
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(1543): 									PrintDao.printDCBById(extra, sellId, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(1637): 								PrintDao.printDCBById(extra, sellId, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(1713): 										PrintDao.printDCBInfoDetail(extra, sellInfo, details, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(1741): 								PrintDao.printDCBInfoDetail(extra, sellInfo, details, '');
+D:\Code\avbr-sources\vbooker-project\VBooker_1_5_1\assets\www\socket\service.js(1868): 	PrintDao.printDCBById(extra, sellId, selectCustomerInfo);
