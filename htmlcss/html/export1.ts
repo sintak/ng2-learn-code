@@ -1,0 +1,1 @@
+export var value111 = "hello world";

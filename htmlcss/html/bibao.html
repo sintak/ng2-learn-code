@@ -132,6 +132,45 @@
             
         }, 1500);
     </script>
+
+    <script>
+        var dataArray = [0x01, 0x02, 0x53, 0x20, 0x30, 0x30 , 0x2E , 0x30  , 0x30 , 0x30 , 0x6B , 0x67 , 0x61 , 0x03 , 0x04 , 0x10];
+
+        (dataArray => {
+            var flag1, sign, weight, unit, isZero, isNetWeight, isWeightAbnormal;
+
+            var index = 0;
+
+            index++;
+            index++;
+
+            flag1 = String.fromCharCode(dataArray[index++]);
+
+            sign = String.fromCharCode(dataArray[index++]);
+
+            weight = (() => {
+                var _weight = "";
+                for(var i =0; i < 6; i++) {
+                    _weight += String.fromCharCode(dataArray[index++]);
+                }
+                return _weight;
+            })();
+
+            unit = String.fromCharCode(dataArray[index++]) + String.fromCharCode(dataArray[index++]);
+
+            index++;
+            index++;
+            index++;
+
+            isZero = dataArray[index] & 1 << 4 ? true :false;
+            isNetWeight = dataArray[index] & 1 << 5 ? true :false;
+            isWeightAbnormal = dataArray[index] & 1 << 6 ? true :false;
+
+                // OS2XManager.prototype.dataReceivedHandler(flag1, sign, weight, unit, isZero, isNetWeight, isWeightAbnormal);
+                // OS2XManager.prototype.dataReceivedHandler(dataArray);
+                console.log(flag1, sign, weight, unit, isZero, isNetWeight, isWeightAbnormal);
+        })(dataArray);
+    </script>
     
 </body>
 <!--<script src="./a.js"></script>--> <!-- ? -->
