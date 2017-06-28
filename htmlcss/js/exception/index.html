@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./e1.js"></script>
+    <script src="./e2.js"></script>
+</head>
+<body>
+    <script>
+
+        try {                
+            if(appMode) 
+            {
+                console.log(0);
+            }
+        } catch (error) {
+            
+        }
+        
+        // ----------------
+
+        // function test(callback) {
+        //     callback(3);
+        // }
+
+        // function A(o){
+        //     test(function(a) {
+        //             console.log(a);
+        //             console.log(this);  // function B(){}
+        //         }.bind(o)
+        //     )
+            
+        // }
+        
+        // function B() {
+        //     // var
+        // }
+
+        // A(B);
+
+
+        // ----------------
+        
+        function test(callback, thisArg) {
+            callback(3, thisArg);
+        }
+
+        function A(thisArg){
+            test(function(a, _thisArg) {
+                    console.log(a);
+                    console.log(_thisArg);  // function B(){...}
+                }, thisArg
+            )
+            
+        }        
+
+        function B() {
+            // var
+        }
+
+        A(B);
+
+        // ----------------
+        test(function(a) {
+                    console.log(a);
+                    console.log(this);  // function A(){...}
+                }.bind(A)
+        );
+
+    </script>
+    <div>
+        js应用奔溃，是以文件为单位执行域的，即奔溃后该文件不再执行下去，但不会导致浏览器奔溃，别的文件还会执行
+    </div>
+</body>
+</html>
