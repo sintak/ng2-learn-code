@@ -7,8 +7,13 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  msg: string = '';
 
+  constructor(public navCtrl: NavController) {
+    let a = 78;
+    let b = "hello";
+    this.msg += `${b} ${a}\n`;
+    this.msg += navigator.userAgent + '\n';
   }
 
 }

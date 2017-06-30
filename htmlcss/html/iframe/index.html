@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<script src="https://code.jquery.com/jquery.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!--<iframe src="./frame1.html" frameborder="0"></iframe>-->
+
+<!--    
+    <script>
+        f1("i am index");
+    </script>
+-->
+
+
+
+<!--
+    <script type="text/JavaScript">
+        // 第二种方法加载页面：jQuery $.ajax
+        $(document).ready(function(){
+            ajaxload('user_dashboard.html')
+            function ajaxload(local){
+                htmlobj=$.ajax({url:local,async:false});
+                $(".contentRight").html(htmlobj.responseText);
+            }
+            $("#sidebar").find('li:eq(0)').click(function(){
+                ajaxload('user_dashboard.html')
+                return false;
+            });
+
+            $("#sidebar").find('li:eq(1)').click(function(){
+                ajaxload('user_profile.html')
+                return false;
+            });
+
+        });
+
+    </script>
+-->
+
+    <style>
+        .contentRight {
+            width: 600px;
+            height: 800px;
+            background-color: gray;
+        }
+    </style>
+
+    <script>
+        function indexTest(msg) {
+            console.log(msg);
+        }
+    </script>
+
+    <div class="contentRight"></div>
+
+    <!--外内层可以互相调用，但似乎无法在浏览器中调试js（看不到加载的js）-->
+    <script type="text/JavaScript">
+        // 第二种方法加载页面：jQuery $.ajax
+        $(document).ready(function(){
+            ajaxload('frame1.html')
+            function ajaxload(local){
+                htmlobj=$.ajax({url:local,async:false});
+                $(".contentRight").html(htmlobj.responseText);
+
+
+                f1("i am index");  // ok! 也能使用那个html域内的JS
+                
+            }
+        });
+
+    </script>
+
+
+</body>
+</html>
