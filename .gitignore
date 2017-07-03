@@ -19,7 +19,7 @@ node_modules/
 typings/
 
 # file
-*.js
+#*.js
 *.map
 *.log
 *.log.*
