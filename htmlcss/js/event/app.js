@@ -1,5 +1,6 @@
 Event.addEvent("alert", function() {
     alert("弹出！");
+    console.trace();
 });
 
 // 触发自定义alert事件

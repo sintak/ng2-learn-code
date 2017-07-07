@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./scop1.js"></script>
+    <script src="./scop2.js"></script>
+</head>
+<body>
+    两个文件存在同样变量名，后面加载的会覆盖前面的。解决办法是加上命名空间
+    <script>
+        test1();
+        test2();
+        test3();
+    </script>
+</body>
+</html>
