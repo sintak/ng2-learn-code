@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>width获取</title>
 </head>
+
 <body>
     <div id="div1" style="width: 58px;"></div>
     <script type="text/javascript">
-        getDivWidth = function() {
+        getDivWidth = function () {
             console.log(document.getElementById('div1').style.width);
             console.log(document.getElementById('div1').clientWidth);
             console.log(document.getElementById('div1'));
@@ -15,5 +17,120 @@
 
         getDivWidth();
     </script>
+
+    <script>
+        var a = 3;
+        // var result = a.name.f ? a.name.f : 123; //error
+        var result = (function () {
+            try {
+                return a.name ? a.name : 6666;
+            } catch (error) {
+                return 55555;
+            }
+        })();
+        console.log(result);
+
+        try {
+
+            var tt = [1, 2, 3];
+            var t1 = tt.find(function (t) { return t == 3; });
+            var t2 = tt.find(function (t) { return t == 3; });
+            console.log(t1 + " " + t2);
+        } catch (error) {
+
+        }
+
+        try {
+            var zfl = {};
+            zfl.GetLength = function (str) {
+                var realLength = 0, len = str.length, charCode = -1;
+                for (var i = 0; i < len; i++) {
+                    charCode = str.charCodeAt(i);
+                    if (charCode > 0 && charCode <= 128) realLength += 1;
+                    else realLength += 2;
+                }
+                return realLength;
+            }
+            var text = "中国123zkrljl:。.";
+            console.log(zfl.GetLength(text))
+
+            zfl.cutstr = function (str, len) {
+                var arr = [];                
+                var str_cut = new String();
+                var index = 0;
+
+                for (var i = 0; i < str.length; i++) {
+                    var a = str.charAt(i);
+                    index++;
+
+                    if (escape(a).length > 4) {
+                        index++;
+                    }
+                    str_cut = str_cut.concat(a);
+
+                    if (index >= len || (i + 1) >= str.length) {
+                        arr.push(str_cut);
+                        str_cut = "";
+                        index = 0;
+                    }
+                }
+
+                return arr;
+            }
+
+            /** 
+             * js截取字符串，中英文都能用 
+             * @param str：需要截取的字符串 
+             * @param len: 需要截取的长度 
+             */
+            zfl.cutstr1 = function cutstr(str, len) {
+                var str_length = 0;
+                var str_len = 0;
+                str_cut = new String();
+                str_len = str.length;
+                for (var i = 0; i < str_len; i++) {
+                    a = str.charAt(i);
+                    str_length++;
+                    if (escape(a).length > 4) {
+                        //中文字符的长度经编码之后大于4  
+                        str_length++;
+                    }
+                    str_cut = str_cut.concat(a);
+                    if (str_length >= len) {
+                        str_cut = str_cut.concat("...");
+                        return str_cut;
+                    }
+                }
+                //如果给定字符串小于指定长度，则返回源字符串；  
+                if (str_length < len) {
+                    return str;
+                }
+            }
+
+
+            console.log(1, zfl.cutstr(text, 1));  // f
+            console.log(2, zfl.cutstr(text, 2.1));  // f
+            console.log(3, zfl.cutstr(text, 3));  // f
+            console.log(4, zfl.cutstr(text, 4));  // f
+            console.log(5, zfl.cutstr(text, 5));
+            console.log(6, zfl.cutstr(text, 6));
+            console.log(7, zfl.cutstr(text, 7));
+            console.log(13, zfl.cutstr(text, 13));
+            console.log(14, zfl.cutstr(text, 14));
+            console.log(15, zfl.cutstr(text, 15));  // f
+            console.log(16, zfl.cutstr(text, 16));  // f
+            console.log(17, zfl.cutstr(text, 17));  // f
+            console.log(18, zfl.cutstr(text, 18));  // f
+
+
+
+        } catch (error) {
+
+        }
+
+        var aa = [];
+        aa.concat([])
+    </script>
 </body>
+
 </html>
