@@ -130,3 +130,24 @@ var XXDao = {
 XXDao.addCommodity({ name: '大闸蟹', price: 77}, function() {
     console.log('add ok');
 })
+
+
+//## 常用SQLITE语句
+try {
+	fgDB.executeSql("select sql from sqlite_master where type = 'table' and tbl_name='setting'", function(res){console.log(true, res)}, function(res){console.log(false, res)})
+	fgDB.executeSql('select count(*) as total FROM setting where id=1', function(res){console.log(true, res)}, function(res){console.log(false, res)})
+	fgDB.executeSql('select * FROM setting', function(res){console.log(true, res)}, function(res){console.log(false, res)})
+
+var sql;
+sql = 'alter table '+tableName+' add column '+columnName+' '+columnType+';';  // alter table修改表。添加列columnName到tableName
+sql = 'SELECT count(*) as total FROM ' + tableName + " where id<>'" + queryId + "'" + " and name='" + name + "'";  // <>:小于大于，即不等于
+sql = "select sql from sqlite_master where type = 'table' and tbl_name='" + tableName + "'"  // 判断表是否存在
+sql = "select sql from sqlite_master where type = 'table' and tbl_name='" + tableName + "' and sql like '%" + columnName + "%'"
+
+} catch (error) {
+	
+}
+
+// alert(1);
+// debugger  // 在调试模式下才起作用
+// alert(2);
