@@ -1,0 +1,86 @@
+[
+    {
+        "printerName": "",
+        "ipaddress": "192.168.1.92",
+        "printerType": 3,
+        "printerModel": "A80-USH",
+        "printerFlag": 0,
+        "printerWidth": 48,
+        "contents": [
+            {
+                "type": 0,
+                "content": "2017-07-18 10:45:31\n桌号：桌位6转到 桌号:桌位7\n",
+                "remark": 3,
+                "paraLen": 1,
+                "para": [
+                    1
+                ]
+            },
+            {
+                "type": 1,
+                "content": "",
+                "remark": 0,
+                "paraLen": 1,
+                "para": [
+                    10
+                ]
+            },
+            {
+                "type": 1,
+                "content": "",
+                "remark": 1,
+                "paraLen": 0,
+                "para": []
+            },
+            {
+                "type": 1,
+                "content": "",
+                "remark": 3,
+                "paraLen": 0,
+                "para": []
+            }
+        ]
+    },
+    {
+        "printerName": "",
+        "ipaddress": "192.168.1.77",
+        "printerType": 3,
+        "printerModel": "A80-USH",
+        "printerFlag": 0,
+        "printerWidth": 48,
+        "contents": [
+            {
+                "type": 0,
+                "content": "2017-07-18 10:45:31\n桌号：桌位6转到 桌号:桌位7\n",
+                "remark": 3,
+                "paraLen": 1,
+                "para": [
+                    1
+                ]
+            },
+            {
+                "type": 1,
+                "content": "",
+                "remark": 0,
+                "paraLen": 1,
+                "para": [
+                    10
+                ]
+            },
+            {
+                "type": 1,
+                "content": "",
+                "remark": 1,
+                "paraLen": 0,
+                "para": []
+            },
+            {
+                "type": 1,
+                "content": "",
+                "remark": 3,
+                "paraLen": 0,
+                "para": []
+            }
+        ]
+    }
+]
