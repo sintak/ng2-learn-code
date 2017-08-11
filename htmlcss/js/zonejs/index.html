@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./zone.js"></script>
+</head>
+
+<body>
+    <script>
+        var parent = Zone.current;
+        var child = parent.fork({
+            name: 'child',
+            onScheduleTask: function (parentZoneDelegate, currentZone, targetZone, task) {
+                console.log(`schedule task at: ${new Date().getTime()}`);
+                return parentZoneDelegate.scheduleTask(targetZone, task);
+            },
+            onInvokeTask: function (parentZoneDelegate, currentZone, targetZone, task, applyThis, applyArgs) {
+                console.log(`start executing callback at: ${new Date().getTime()}`);
+                parentZoneDelegate.invokeTask(targetZone, task, applyThis, applyArgs);
+                console.log(`callback execution over at: ${new Date().getTime()}`);
+            }
+        });
+
+        child.run(() => {
+            console.log(111111);
+            setTimeout(() => {
+                var sum = 0;
+                for (var i = 0; i < 100000000; i++) {
+                    sum += i;
+                }
+            }, Math.random() * 10000);
+            console.log(2222222);
+            
+        });
+    </script>
+
+     <script>
+        var log = function (phase) {
+            return function () {
+                console.log("I am in zone.js " + phase + "!");
+            };
+        };
+
+        var parent = Zone.current;
+        parent.fork({
+            onZoneCreated: log("onZoneCreated"),  // api过期了？
+            beforeTask: log("beforeTask"),
+            afterTask: log("afterTask"),
+        }).run(function () {
+            var methodLog = function (func) {
+                return function () {
+                    console.log("I am from " + func + " function!");
+                };
+            },
+                foo = methodLog("foo"),
+                bar = methodLog("bar"),
+                baz = function () {
+                    setTimeout(methodLog('baz in setTimeout'), 0);
+                };
+
+            foo();
+            baz();
+            bar();
+        });
+
+    </script> 
+
+
+    <!-- <script>
+        console.log(`begin----current zone is ${Zone.current.name}`);
+
+        var zoneA = Zone.current.fork({
+            name: 'ZoneA'
+        });
+
+        zoneA.run(() => {
+            testSetTimeout();
+            testAddEventListener();
+        });
+
+        function testSetTimeout() {
+            setTimeout(() => {
+                console.log(`setTimeout callback----current zone is ${Zone.current.name}`);
+            }, 1000)
+        }
+
+        function testAddEventListener() {
+            document/*.body*/.addEventListener('click', event => {
+                console.log(`mouseclick handler----current zone is ${Zone.current.name}`);
+            });
+        }
+
+        console.log(`end------current zone is ${Zone.current.name}`);
+
+    </script> -->
+
+</body>
+
+</html>
