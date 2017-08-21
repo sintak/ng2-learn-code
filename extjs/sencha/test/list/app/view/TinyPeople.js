@@ -121,23 +121,51 @@ Ext.define('myApp.view.TinyPeople', {
 });
 
 Ext.define('myApp.view.TinyPeopleView', {
-    extend: 'Ext.Panel',
+    extend: 'Ext.Container',
     xtype: 'tinyPeopleView',
+    flex : 1,
+    
     // layout: 'vbox',
     config: {
-        // layout: 'vbox',
-            
+        layout: {
+            type : 'vbox'
+        },
         items: [
             {
                 html: 'i am TinyPeopleView top',
-                id: 'tpvh'
+                id: 'tpvh',
+                hidden: true,
             },
+            // {
+            //     xtype: 'tinyPeople'
+            // },
             {
-                xtype: 'tinyPeople'
-            },
+                xtype : 'panel',
+                //height : clientHeight - 65,
+                flex : 1,
+                layout : {
+                    type : 'hbox'
+                },
+                items: [
+                    {
+                        xtype: 'tinyPeople',  // 需要一个panel包住，然后设置宽度，才能显示？
+                        width: '100%',
+                        // store: Ext.create('Ext.data.Store', {
+                        //     fields: ['id', 'StudentName'],
+                        //     data: [
+                        //         { id: '1', StudentName: 'Alice'},
+                        //         { id: '2', StudentName: 'Lily'},
+                        //         { id: '3', StudentName: 'Frank'},
+                        //     ]
+                        // }),
+                        // itemTpl: new Ext.XTemplate('<div style"width=200px;heigth:20px;">{StudentName}</div>'),
+                    },
+                ]
+            },            
             {
                 html: 'i am TinyPeopleView bottom',
-                id: 'tpvh1'
+                id: 'tpvh1',
+                hidden: true,
             },
         ]
     },

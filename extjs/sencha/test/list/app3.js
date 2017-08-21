@@ -231,63 +231,83 @@ var helloTouchApp = new Ext.application({ //利用框架的Application类的构�
         // // Ext.Viewport.add(tabPanel);
 
 
-        // var p = Ext.create('Ext.Panel', {
-        //     config: {
+        var p = Ext.create('Ext.Panel', {
+            config: {
 
-        //         layout: {
-        //             type: 'vbox',
-        //         },
-        //     },
-        //     items: [
-        //         // {
-        //         //     html: 'panel1'
-        //         // },
-        //         // {
-        //         //     xtype: 'testView',                    
-        //         // },
-        //         // {
-        //         //     xtype: 'printTaskListTabPanelView',
-        //         //     id: 'taskView',
-        //         //     // width: 555,
-        //         //     // height: 512,
+                layout: {
+                    type: 'vbox',
+                },
+            },
+            items: [
+                // {
+                //     html: 'panel1'
+                // },
+                // {
+                //     xtype: 'testView',                    
+                // },
+                // {
+                //     xtype: 'printTaskListTabPanelView',
+                //     id: 'taskView',
+                //     // width: 555,
+                //     // height: 512,
                     
-        //         // },     
-        //         {
-        //             // xtype: 'panel',
+                // },
+                {
+                    html: '<div><input type="checkbox></div>'
+                },
+                {
+                    // xtype: 'panel',
                     
-        //             html: `
-        //             <div class="sy-print-task-list">
-        //                 <div class="content">内容</div><div class="createTime">创建时间</div><div class="target">目标</div><div class="status">状态</div><div class="from">来自</div><div class="id">id</div>
-        //             </div>
-        //             `,
-        //             height: 30
-        //         },               
-        //         // {
-        //         //     xtype: 'tinyPeople',
-        //         //     // height: 300
-        //         //     id: 'tp1'
-        //         // },
-        //         {
-        //             xtype: 'tinyPeopleView',
-        //             // height: 300,
-        //             id: 'tpv'
-        //         },
+                    html: `
+                    <div class="sy-print-task-list">
+                        <div class="content">内容</div><div class="createTime">创建时间</div><div class="target">目标</div><div class="status">状态</div><div class="from">来自</div><div class="id">id</div>
+                    </div>
+                    `,
+                    height: 30
+                },               
+                // {
+                //     xtype: 'tinyPeople',
+                //     // height: 300
+                //     id: 'tp1'
+                // },
+                {
+                    xtype: 'tinyPeopleView',
+                    height: 300,
+                    // width: 500,
+                    id: 'tpv1',
+                    // hidden: true,
+                    
+                },
+                {
+                    xtype: 'tinyPeopleView',
+                    height: 300,
+                    // width: 500,
+                    id: 'tpv2',
+                    hidden: true,
+                },
+                {
+                    xtype: 'tinyPeopleView',
+                    height: 300,
+                    // width: 500,
+                    id: 'tpv3',
+                    hidden: true,
+                },
                 
-        //     ],
-        //     listeners: {
+            ],
+            listeners: {
                 
-        //         initialize: function( thisArg, eOpts ) {
-        //             // console.log(thisArg)
-        //         },
-        //         activate: function( newActiveItem, thisArg, oldActiveItem, eOpts ) {                    
-        //             // console.log(thisArg)
-        //             // this.add(Ext.create('tinyPeople', { }))
+                initialize: function( thisArg, eOpts ) {
+                    // console.log(thisArg)
+                },
+                activate: function( newActiveItem, thisArg, oldActiveItem, eOpts ) {                    
+                    // console.log(thisArg)
+                    // this.add(Ext.create('tinyPeople', { }))
                     
-        //         }
-        //     }
-        // });
-        // Ext.Viewport.add(p);
-        // p.show();
+                }
+            }
+        });
+        Ext.Viewport.add(p);
+        p.show();
 
         // var store = Ext.getCmp('tp1').getStore();
         // console.log(store)
@@ -306,8 +326,8 @@ var helloTouchApp = new Ext.application({ //利用框架的Application类的构�
         // Ext.Viewport.add(tinyPeopleView);
         
 
-        var tinyPeopleView = Ext.create('myApp.view.TaskListView', {
-        });
-        Ext.Viewport.add(tinyPeopleView);
+        // var tinyPeopleView = Ext.create('myApp.view.TaskListView', {
+        // });
+        // Ext.Viewport.add(tinyPeopleView);
     }
 })
