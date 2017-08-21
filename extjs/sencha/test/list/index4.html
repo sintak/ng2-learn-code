@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>List pattern 4</title>
+    <link rel="stylesheet" href="../../css-debug/sencha-touch.css" />
+    <style type="text/css">
+        .select .x-list-header {
+            padding: 0.5em 1.02em;
+        }
+
+        .select .x-list-header .x-innerhtml {
+            color: #32BBC1;
+        }
+
+        .select .x-list-header:before {
+            content: "全选";
+            right: 0;
+            position: absolute;
+            width: 3em;
+            text-align: center;
+            color: #8C8C8A;
+        }
+
+        .select .x-list-header,
+        .select .x-list-item.x-list-item-tpl,
+        .select .x-list-item.x-list-item-tpl.x-list-footer-wrap {
+            border-top: 0;
+            border-bottom: 1px solid #F2F2E8;
+            background-image: none;
+            background-color: #E7E4DD;
+            background-image: linear-gradient(#E6E6DE, #DEDDD4);
+        }
+
+        .select .x-list-item.x-list-item-tpl.list-item-selected {
+            background-image: none;
+            background-color: #D9D5CC;
+        }
+
+        .select .x-list-item-tpl .x-list-disclosure {
+            border-radius: 0;
+            border: 1px solid #D8D8D7;
+            background-image: none;
+            background-color: #E2E2E2;
+            background-image: linear-gradient(#E0E0E0, #EAEAEA);
+        }
+
+        .select .x-list-disclosure:before {
+            content: '3';
+            font-size: 20px;
+            color: white;
+        }
+
+        .select .list-item-selected .x-list-disclosure {
+            border: 1px solid #ADD157;
+            background-image: none;
+            background-color: #AEE03D;
+            background-image: linear-gradient(#AEE03E, #AEE03E);
+        }
+
+        /*  */
+        
+        .sy-print-task-list {
+            width: 680px;
+        }
+        .sy-print-task-list .content {
+            float: left; 
+            width: 35%;
+        }        
+        .sy-print-task-list .createTime {
+            float: left; 
+            width: 25%;
+        }   
+        .sy-print-task-list .target {
+            float: left; 
+            width: 10%;
+        }
+        .sy-print-task-list .status {
+            float: left; 
+            width: 12%;
+        }
+        .sy-print-task-list .from {
+            float: left; 
+            width: 10%;
+        }
+        .sy-print-task-list .id {
+            float: left; 
+            width: 100;
+            visibility: hidden;
+        }
+                
+        /*文字省略*/
+        .text-overflow{
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            -o-text-overflow:ellipsis;
+            overflow:hidden;
+        }
+    </style>
+    <script src="../../sencha-touch-all-debug.js"></script>
+    <!--<script src="sencha-touch-debug.js"></script>-->
+    <script src="./app4.js"></script>
+    
+</head>
+
+<body>
+</body>
+
+</html>

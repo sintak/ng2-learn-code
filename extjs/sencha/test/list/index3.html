@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css-debug/sencha-touch.css" />
+    <!-- <link rel="stylesheet" href="./simplelist.css" /> -->
+    <style type="text/css">
+        .simpleList .x-list-disclosure {
+            -webkit-mask-size: 100%;
+            -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAE+klEQVRoBe2aS28URxRGsY0h2FmwCQuEWLHjvUNgZAQ4PMwrEkIRIGEgySKwB8QvYIvEP+ANO0CwsJAA88wGBEKBZJUVQkJCQrwJ5nxN31Z5pnpc7e4ZT9vT0peqqanquqfurVvlIW3Dw8NTJtPTPplgxdoCnugeb3m45eEJtgJTJwJPGw8cP8V6TfmC4/Z/H9uEAAZsIdqHZiMBn2UNbvigSw8M2AIAD6PtqBPpmYe+8t1NoL9GLfYf3bTKKhiWo9PoA9KV0dUgn/tRh8tXWg/Hnj0KUB8yz1JNnjXUuhFd264A/f0O7dKXpQ7EIiTPfkKuVyvrSlx3US+KPF26cMbwxeg8Gg3W4LWHFd6rUUepQprQnI/Rh9A25AtjmqseHVkK7w59UxpgYFdg7wH0CwqFpWvyrKI23GZ7OWluwgqwOnqOobVoWh4Tm97DwCpBHUFp2TiUX3v5QVMnLQzMmqAsUVWWyta3UX/TAmOcwjjk6KmE830W7GbU0ZTAGKYEJdj3yAcQ2qYw1jmsG9e0KF8122UDw/SHwFX0EYWC+fpZGG/hPcn1sqk8jGHas+dQ6KXCB6o2g91IPfKsObZpgDGsqAT1hXdpz25A7QZqZU1gBsxFSh5zbEA9yniOU5R5PSvvCnYTSsLYtdkLTGf9uKdD/gS6gI6jPndgUXXe24OKSFAK4zsoSVA+G6uAGaC758/oBrIs+Zb6rbg9up35Xpa1jffpUqEEldezysbJ0VPLjhHADOpEfUiw2gtuUtAKDiGtYNXeqDWJ7zveYQnqM3V3nqx1s2s97xmRoLzzWqMgkLLaTVQJa0ZoJe+hXjRmaMYKVlslr2dlp5wgu4PsiTyszmg5qgVr0CqvoZW2WFlKxhV5gxJsdIMKtYH+Eew6yksoNLy0soJeFzqR+vEI9gx6h9wFzFoPSlA+25g3SlChnnUNU3grkWmxRg0n+ihBnUR5w9j2bCbPGjzzR3sgbc+6gL66TV4zkTHHEqSfZSzr+94V0mbzKUF1GkSWknG5QktGyoj7qBdVeZo2S1Ch2yUNXOMVUcEJyrcQjOeP4vzQCu9BpBtOck5T70HybN4w1iJcR7ouem9QPjhfG+On7EBPUNrKhrYLWp7+FS1FCjtdKvJ6VvM/Q9o2uWC1AHq60QB6hELh0voJ+im6iHReF+FZwe5HP/g8lrXNzuEfeeFu9C9Kg8nSrr9lBZ9ljK/v37xjL5qRFSytf3K15KXy9EH0D/JN3ui2Qj1rC5AAq4FnJvoDPUSNBnTnUy4YQF1maFHlCOAYuouJFN6PkWtEo+ryrH5sL2TPVi5UFXAMrfDegxrtae3ZfWh6paFFffYCx9BKZLtQo/a0YLXIhSUo3yKlAsfQ8vSBBkALtrCjxwdqbTWBY2glst9REee0Lw/ULUEZpFuOChxD1yuRybNbUV0SlAtq9SDgGFp7ushEJlhdKuqWoAzSLYOBHeidGPkc+cIztE2wA6iuCcoFtXom4Bha4f0nGmv2FqyOnoaFscFG9rsfQusYq0T2G8qayASrbdEdOlfR/TJ72AzAaHla5/QD9BnVCucvfK/fjZXtx8WzZneu/+WBf53XOb0G6XetHjQXyfv2vKLyH7qLLqMhJn5DOW5PLmBZDfRUilloGUoD/ovvXgIrT4/rkxt4XK0fw+TtYxhT6iEt4FK7L8D4locDFqnUXSadh78Bx5bEl2CLG+8AAAAASUVORK5CYII=);
+            background-color: #ddd;
+            background-image: none;
+        }
+
+        .simpleList .x-item-selected .x-list-disclosure {
+            background-color: #006bb6;
+        }
+
+
+
+        .testcls1 {
+            color: #C12121;
+        }
+
+        .sy-print-task-list {
+            width: 680px;
+        }
+
+        .sy-print-task-list.list-header {
+            text-align: center;
+        }
+
+        .sy-print-task-list .content {
+            float: left;
+            width: 35%;
+        }
+
+        .sy-print-task-list .createTime {
+            float: left;
+            width: 25%;
+        }
+
+        .sy-print-task-list .target {
+            float: left;
+            width: 10%;
+        }
+
+        .sy-print-task-list .status {
+            float: left;
+            width: 12%;
+        }
+
+        .sy-print-task-list .from {
+            float: left;
+            width: 10%;
+        }
+
+        .sy-print-task-list .id {
+            float: left;
+            width: 100;
+            visibility: hidden;
+        }
+        
+        /*文字省略*/
+        .text-overflow {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+
+
+        /* remenber */
+
+        .select .x-list-header {
+            padding: 0.5em 1.02em;
+        }
+
+        .select .x-list-header .x-innerhtml {
+            color: #32BBC1;
+        }
+
+        .select .x-list-header:before {
+            content: "全选";
+            right: 0;
+            position: absolute;
+            width: 3em;
+            text-align: center;
+            color: #8C8C8A;
+        }
+
+        .select .x-list-header,
+        .select .x-list-item.x-list-item-tpl,
+        .select .x-list-item.x-list-item-tpl.x-list-footer-wrap {
+            border-top: 0;
+            border-bottom: 1px solid #F2F2E8;
+            background-image: none;
+            background-color: #E7E4DD;
+            background-image: linear-gradient(#E6E6DE, #DEDDD4);
+        }
+
+        .select .x-list-item.x-list-item-tpl.list-item-selected {
+            background-image: none;
+            background-color: #D9D5CC;
+        }
+
+        .select .x-list-item-tpl .x-list-disclosure {
+            border-radius: 0;
+            border: 1px solid #D8D8D7;
+            background-image: none;
+            background-color: #E2E2E2;
+            background-image: linear-gradient(#E0E0E0, #EAEAEA);
+        }
+
+        .select .x-list-disclosure:before {
+            content: '3';
+            font-size: 20px;
+            color: white;
+        }
+
+        .select .list-item-selected .x-list-disclosure {
+            border: 1px solid #ADD157;
+            background-image: none;
+            background-color: #AEE03D;
+            background-image: linear-gradient(#AEE03E, #AEE03E);
+        }
+    </style>
+    <script src="../../sencha-touch-all-debug.js"></script>
+    <!--<script src="sencha-touch-debug.js"></script>-->
+    <script src="./app3.js"></script>
+
+</head>
+
+<body>
+    <h2>TEST</h2>
+    <!--     
+    { text: '内容', width:'38%', sortable: true, dataIndex: 'content', },
+    { text: '创建时间', width: '25%',  sortable: true,  dataIndex: 'createTime'},
+    { text: '目标', width: '10%', sortable: true,  dataIndex: 'target'},
+    { text: '状态', width: '12%', sortable: true,  dataIndex: 'status'},
+    { text: '来自', width: '10%', sortable: true,  dataIndex: 'from'},
+    { text: 'id', width: 100, sortable: true,  dataIndex: 'id',hidden:true }, -->
+    <!-- <div class="sy-print-task-list">
+        <div class="content">内容</div><div class="createTime">创建时间</div><div class="target">目标</div><div class="status">状态</div><div class="from">来自</div><div class="id">id</div>
+    </div> -->
+</body>
+
+</html>
