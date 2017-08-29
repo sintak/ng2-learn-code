@@ -1,5 +1,5 @@
 
-Ext.define('myApp.store.PeopleList', {
+Ext.define('Seller.store.PeopleList', {
     storeId:'peopleList',
     extend: 'Ext.data.Store',
     // model: "Seller.model.ArrivalDetailModel",

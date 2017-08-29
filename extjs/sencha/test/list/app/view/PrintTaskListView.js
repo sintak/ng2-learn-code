@@ -1,5 +1,5 @@
 // -----------
-Ext.define('myApp.view.PrintTaskListView', {
+Ext.define('Seller.view.PrintTaskListView', {
     alternateClassName: 'printTaskListView',
     extend: 'Ext.Panel',
     // requires: ['app.view.new.Info'],

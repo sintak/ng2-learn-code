@@ -1,4 +1,4 @@
-Ext.define('myApp.view.PrintTaskList', {
+Ext.define('Seller.view.PrintTaskList', {
     // alternateClassName: 'printTaskList',
     extend: 'ux.SimpleList',
     // requires: ['app.view.new.Info'],

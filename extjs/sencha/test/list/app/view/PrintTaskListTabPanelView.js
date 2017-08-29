@@ -84,7 +84,7 @@
 // });    
 
 
-Ext.define('myApp.view.PrintTaskListTabPanelView', {
+Ext.define('Seller.view.PrintTaskListTabPanelView', {
     // alternateClassName: 'printTaskListTabPanelView',    
     extend: 'Ext.Panel',
     xtype: 'printTaskListTabPanelView',

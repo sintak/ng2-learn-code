@@ -59,7 +59,7 @@
 
         .sy-print-task-list .id {
             float: left;
-            width: 100;
+            width: 0;
             visibility: hidden;
         }
         
@@ -130,11 +130,15 @@
     </style>
     <script src="../../sencha-touch-all-debug.js"></script>
     <!--<script src="sencha-touch-debug.js"></script>-->
+    <script type="text/javascript" charset="utf-8" src="common/dbhelper.js"></script>    
+    <script type="text/javascript" charset="utf-8" src="./plugin/sqlitedb.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./dao/PrintTaskDao.js"></script>
+    
     <script src="./app3.js"></script>
 
 </head>
 
-<body>
+<body onload="onBodyLoad();">
     <h2>TEST</h2>
     <!--     
     { text: '内容', width:'38%', sortable: true, dataIndex: 'content', },

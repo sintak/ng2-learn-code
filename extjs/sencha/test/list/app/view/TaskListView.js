@@ -1,5 +1,5 @@
 
-Ext.define('myApp.view.TaskListView', {
+Ext.define('Seller.view.TaskListView', {
     extend: 'Ext.Container',
     xtype: 'taskListView',
     flex : 1,

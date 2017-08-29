@@ -1,4 +1,4 @@
-Ext.define('myApp.view.TestView', {
+Ext.define('Seller.view.TestView', {
     alternateClassName: 'testView',
     extend: 'Ext.Panel',
     // requires: ['app.view.new.Info'],
