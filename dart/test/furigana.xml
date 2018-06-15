@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResultSet xmlns="urn:yahoo:jp:jlp:FuriganaService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:yahoo:jp:jlp:FuriganaService https://jlp.yahooapis.jp/FuriganaService/V1/furigana.xsd">
+  <Result>
+    <WordList>
+      <Word>
+        <Surface>貴方</Surface>
+        <Furigana>あなた</Furigana>
+        <Roman>anata</Roman>
+      </Word>
+      <Word>
+        <Surface>が</Surface>
+        <Furigana>が</Furigana>
+        <Roman>ga</Roman>
+      </Word>
+      <Word>
+        <Surface>好き</Surface>
+        <Furigana>すき</Furigana>
+        <Roman>suki</Roman>
+        <SubWordList>
+          <SubWord>
+            <Surface>好</Surface>
+            <Furigana>す</Furigana>
+            <Roman>su</Roman>
+          </SubWord>
+          <SubWord>
+            <Surface>き</Surface>
+            <Furigana>き</Furigana>
+            <Roman>ki</Roman>
+          </SubWord>
+        </SubWordList>
+      </Word>
+      <Word>
+        <Surface>だ</Surface>
+        <Furigana>だ</Furigana>
+        <Roman>da</Roman>
+      </Word>
+    </WordList>
+  </Result>
+</ResultSet>
